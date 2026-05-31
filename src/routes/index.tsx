@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Services } from "@/components/site/Services";
+import { Audience } from "@/components/site/Audience";
+import { Tips } from "@/components/site/Tips";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Events } from "@/components/site/Events";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "מירב ברוך – דולה, הכנה ללידה, עיבוד לידה והדרכת הנקה" },
+      { name: "description", content: "ליווי דולה חם ומקצועי, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה. פגישת היכרות ללא תשלום." },
+      { property: "og:title", content: "מירב ברוך – דולה והכנה ללידה" },
+      { property: "og:description", content: "ליווי מעצים לכל אישה בדרכה להורות." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Audience />
+        <Tips />
+        <Testimonials />
+        <Events />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
