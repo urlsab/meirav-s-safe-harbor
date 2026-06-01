@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
+import { LotusDecor, WaveLine } from "./Decorations";
 
 const testimonials = [
   {
@@ -29,26 +31,65 @@ const testimonials = [
 
 export function Testimonials() {
   const ref = useReveal();
+  const [current, setCurrent] = useState(0);
+  const total = testimonials.length;
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % total);
+    }, 4500);
+    return () => clearInterval(id);
+  }, [total]);
+
   return (
-    <section id="testimonials" className="py-20 sm:py-28">
+    <section id="testimonials" className="relative py-20 sm:py-28 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <LotusDecor className="absolute top-8 right-8 w-20 h-14 text-accent/20 animate-drift" />
+        <LotusDecor className="absolute bottom-8 left-8 w-16 h-12 text-primary/15 animate-drift" style={{ animationDelay: "6s" }} />
+      </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="text-accent font-semibold tracking-wide">המלצות</span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold">מה אומרות הנשים שליוויתי</h2>
+          <WaveLine className="mt-3 mx-auto w-36 h-4 text-primary/40" />
         </div>
-        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <figure
-              key={i}
-              className="relative rounded-3xl bg-card border border-border p-7 shadow-soft hover:shadow-warm hover:-translate-y-1 transition-all duration-500"
+
+        <div className="mt-14">
+          <div className="overflow-hidden" dir="ltr">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(${current * -100}%)` }}
             >
-              <div className="absolute -top-4 right-6 h-10 w-10 rounded-full bg-gradient-warm flex items-center justify-center text-primary-foreground text-xl">
-                ♥
-              </div>
-              <blockquote className="text-foreground/85 leading-relaxed">"{t.text}"</blockquote>
-              <figcaption className="mt-5 font-semibold text-primary">— {t.author}</figcaption>
-            </figure>
-          ))}
+              {testimonials.map((t, i) => (
+                <figure
+                  key={i}
+                  className="min-w-full px-2 sm:px-16"
+                  dir="rtl"
+                >
+                  <div
+                    className={`rounded-3xl border-2 p-7 sm:p-10 shadow-soft max-w-2xl mx-auto bg-background/50 ${
+                      i % 2 === 0 ? "border-primary" : "border-accent"
+                    }`}
+                  >
+                    <blockquote className="text-foreground/85 leading-relaxed text-lg">&ldquo;{t.text}&rdquo;</blockquote>
+                    <figcaption className="mt-5 font-semibold text-primary">— {t.author}</figcaption>
+                  </div>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-center gap-3 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === current ? "bg-accent w-6" : "bg-border w-2"
+                }`}
+                aria-label={`הצג המלצה ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

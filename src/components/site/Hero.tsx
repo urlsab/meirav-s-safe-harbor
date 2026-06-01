@@ -1,13 +1,17 @@
-import heroImg from "@/assets/hero-mother.jpg";
+import heroImg from "@/assets/hand 2 birth.png";
+import { LotusDecor, DotScatter, FlowerSmall } from "./Decorations";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* decorative circles */}
+      {/* decorative blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-primary/20 blur-3xl animate-pulse-soft" />
-        <div className="absolute top-40 -left-32 w-[360px] h-[360px] rounded-full bg-accent/20 blur-3xl animate-pulse-soft" style={{ animationDelay: "2s" }} />
-        <div className="absolute bottom-0 right-1/3 w-[280px] h-[280px] rounded-full bg-rose-soft/40 blur-3xl animate-pulse-soft" style={{ animationDelay: "4s" }} />
+        <div className="absolute -top-24 -right-24 w-105 h-105 rounded-full bg-primary/15 blur-3xl animate-pulse-soft" />
+        <div className="absolute top-40 -left-32 w-90 h-90 rounded-full bg-accent/15 blur-3xl animate-pulse-soft" style={{ animationDelay: "2s" }} />
+        <div className="absolute bottom-0 right-1/3 w-70 h-70 rounded-full bg-rose-soft/30 blur-3xl animate-pulse-soft" style={{ animationDelay: "4s" }} />
+        <LotusDecor className="absolute bottom-10 left-8 w-20 h-14 text-primary/25 animate-drift" />
+        <FlowerSmall className="absolute top-16 right-1/4 w-10 h-10 text-accent/20 animate-drift" style={{ animationDelay: "3s" }} />
+        <DotScatter className="absolute top-0 left-0 w-full h-full text-primary/30" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center">
@@ -34,9 +38,20 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade" style={{ animationDelay: "0.3s" }}>
-          <div className="absolute -inset-6 bg-gradient-soft rounded-[3rem] blur-2xl" />
-          <div className="relative rounded-[2.5rem] overflow-hidden shadow-warm animate-float">
-            <img src={heroImg} alt="אישה בהריון מחבקת את בטנה" width={1536} height={1280} className="w-full h-auto" />
+          <img
+            src={heroImg}
+            alt="אישה בהריון מחבקת את בטנה"
+            width={1536}
+            height={1280}
+            className="w-full h-auto animate-float"
+          />
+          {/* Floating hearts */}
+          <div className="pointer-events-none absolute inset-0 overflow-visible">
+            <span className="absolute animate-heart-float text-2xl text-accent/70" style={{ top: "8%",  right: "7%",  animationDelay: "0s" }}>♥</span>
+            <span className="absolute animate-heart-float text-lg  text-primary/60" style={{ top: "28%", right: "-1%", animationDelay: "1.3s" }}>♥</span>
+            <span className="absolute animate-heart-float text-3xl text-rose-deep/55" style={{ top: "62%", right: "5%",  animationDelay: "2.6s" }}>♥</span>
+            <span className="absolute animate-heart-float text-base text-accent/50" style={{ top: "18%", left:  "5%",  animationDelay: "0.7s" }}>♥</span>
+            <span className="absolute animate-heart-float text-xl  text-primary/45" style={{ top: "74%", left:  "7%",  animationDelay: "2s" }}>♥</span>
           </div>
         </div>
       </div>
