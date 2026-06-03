@@ -27,7 +27,7 @@ export function Navbar() {
         <ul className="hidden lg:flex items-center gap-7 text-sm font-medium">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
+              <a href={l.href} className="text-accent hover:text-accent/80 transition-colors duration-300">
                 {l.label}
               </a>
             </li>
@@ -56,7 +56,7 @@ export function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2.5 px-4 rounded-xl text-foreground/80 hover:text-primary hover:bg-muted transition-colors font-medium"
+                  className="block py-2.5 px-4 rounded-xl text-accent hover:text-accent hover:bg-accent/10 transition-colors font-medium"
                 >
                   {l.label}
                 </a>

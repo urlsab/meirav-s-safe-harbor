@@ -16,10 +16,10 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-right">
-          <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground" style={{ animationDelay: "0.1s" }}>
+          <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent pb-1" style={{ animationDelay: "0.1s" }}>
             ליווי חם ומעצים
             <br />
-            לכל אישה בדרכה <span className="text-accent">להורות</span>
+            לכל אישה בדרכה להורות
           </h1>
           <p className="animate-fade-up mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed" style={{ animationDelay: "0.25s" }}>
             אני כאן כדי שתחווי לידה בטוחה, מודעת ומעצימה – מהרגע הראשון של ההיריון ועד הפגישה הראשונה עם התינוק שלך.

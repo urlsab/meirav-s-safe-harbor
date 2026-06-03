@@ -128,7 +128,9 @@ export function Services() {
       </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">ארבעה מעגלי ליווי לאורך הדרך</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+            ארבעה מעגלי ליווי לאורך הדרך
+          </h2>
           <WaveLine className="mt-3 mx-auto w-40 h-4 text-accent/40" />
         </div>
         <div className="mt-14 grid sm:grid-cols-2 gap-6">
@@ -138,7 +140,7 @@ export function Services() {
               className={`group relative h-108 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? 'border-primary' : 'border-accent'}`}
               style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="absolute inset-0 flex items-center justify-center opacity-22" aria-hidden="true">
+              <div className="absolute inset-0 flex items-center justify-center opacity-30" aria-hidden="true">
                 <s.icon className="h-[82%] w-[82%]" />
               </div>
 
@@ -151,7 +153,7 @@ export function Services() {
               </div>
 
               <div className="absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0">
-                <div className="absolute inset-0 bg-background/90" aria-hidden="true" />
+                <div className="absolute inset-0 bg-linear-to-b from-background/14 via-background/38 to-background/52 backdrop-blur-[1px]" aria-hidden="true" />
                 <div className="relative h-full overflow-y-auto p-6">
                   <h3 className={`text-xl sm:text-2xl font-bold text-center ${i % 2 === 0 ? 'text-primary' : 'text-accent'}`}>{s.title}</h3>
                   <p className="mt-3 text-foreground/85 leading-relaxed whitespace-pre-line text-base">{s.text}</p>

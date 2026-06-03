@@ -69,7 +69,9 @@ export function Testimonials() {
       </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">מה אומרות הנשים שליוויתי</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+            מה אומרות הנשים שליוויתי
+          </h2>
           <WaveLine className="mt-3 mx-auto w-36 h-4 text-primary/40" />
         </div>
 

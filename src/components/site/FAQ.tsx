@@ -44,7 +44,9 @@ export function FAQ() {
     <section id="faq" className="py-20 sm:py-28 bg-muted/40">
       <div ref={ref} className="reveal mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">שאלות שנשאלות לעיתים קרובות</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+            שאלות שנשאלות לעיתים קרובות
+          </h2>
           <WaveLine className="mt-3 mx-auto w-36 h-4 text-primary/40" />
         </div>
 

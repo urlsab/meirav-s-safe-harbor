@@ -14,7 +14,9 @@ export function About() {
       </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6 grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-3">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold">מירב ברוך, דולה ומלווה לידה</h2>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+            מירב ברוך, דולה ומלווה לידה
+          </h2>
           <WaveLine className="mt-3 w-32 h-4 text-primary/40" />
           <div className="mt-6 space-y-4 text-foreground/80 leading-relaxed text-lg">
             <p>
