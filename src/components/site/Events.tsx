@@ -18,11 +18,11 @@ export function Events() {
           <img src={eventsImg} alt="אירועים קרובים" className="w-full object-cover" />
         </div>
 
-        <div className="mt-6 text-center">
+        {/* <div className="mt-6 text-center">
           <a href="#contact" className="inline-flex rounded-full bg-gradient-warm text-primary-foreground px-8 py-3 font-semibold shadow-soft hover:scale-105 transition-transform text-lg">
             להרשמה
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

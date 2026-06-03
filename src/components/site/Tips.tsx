@@ -7,6 +7,7 @@ import handss from "@/assets/handss.png";
 import newBorn from "@/assets/new born.png";
 import heartGreen from "@/assets/heart green.png";
 import livuy from "@/assets/livuy.png";
+import holdBaby from "@/assets/hold baby.png";
 
 const tips = [
   {
@@ -94,6 +95,12 @@ const tipBackgrounds: Record<
     frontDim: "rgba(0, 0, 0, 0.34)",
     backDim: "rgba(0, 0, 0, 0.52)",
   },
+  "לידה – התחלה חדשה": {
+    frontImage: holdBaby,
+    backImage: holdBaby,
+    frontDim: "rgba(0, 0, 0, 0.34)",
+    backDim: "rgba(0, 0, 0, 0.52)",
+  },
 };
 
 export function Tips() {
@@ -103,7 +110,7 @@ export function Tips() {
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
           <WaveLine className="mt-3 mx-auto w-36 h-4 text-accent/40" />
-          <p className="mt-4 text-xl sm:text-2xl font-semibold text-accent/90 italic">מחשבות קטנות שעושות שינוי גדול בדרך אל הלידה.</p>
+          <p className="mt-4 text-xl sm:text-2xl font-semibold text-accent/90 italic">מחשבות קטנות שעושות שינוי גדול</p>
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
