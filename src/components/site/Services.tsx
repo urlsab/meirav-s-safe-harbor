@@ -167,10 +167,10 @@ export function Services() {
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center -z-10">
             <div className="w-96 h-24 rounded-full bg-accent/10 blur-3xl" />
           </div>
-          <p className="text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+          <p className="gveret-levin-regular text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.24] px-1 py-1">
             לכל אישה הזכות לחוויה חיובית ומעצימה בדרך להורות.
           </p>
-          <p className="mt-5 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+          <p className="gveret-levin-regular mt-5 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-[1.24] px-1 py-1">
             אני כאן כדי לוודא שתהיי מוכנה, בטוחה ונתמכת לאורך כל הדרך.
           </p>
         </div>
