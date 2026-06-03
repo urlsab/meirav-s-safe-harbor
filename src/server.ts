@@ -1,5 +1,7 @@
 import "./lib/error-capture";
 
+// text comment 1
+
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 

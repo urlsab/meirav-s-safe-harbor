@@ -16,9 +16,6 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-right">
-          <p className="animate-fade-up inline-block rounded-full bg-secondary/60 text-secondary-foreground px-4 py-1.5 text-sm font-medium mb-5">
-            דולה • הכנה ללידה • עיבוד לידה • הדרכת הנקה
-          </p>
           <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground" style={{ animationDelay: "0.1s" }}>
             ליווי חם ומעצים
             <br />
@@ -31,7 +28,7 @@ export function Hero() {
             <a href="#contact" className="rounded-full bg-gradient-warm text-primary-foreground px-7 py-3 font-semibold shadow-warm hover:scale-105 transition-transform duration-300">
               פגישת היכרות ללא תשלום
             </a>
-            <a href="#services" className="rounded-full border-2 border-primary text-primary px-7 py-3 font-semibold hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+            <a href="#services" className="rounded-full border-2 border-rose-deep text-rose-deep px-7 py-3 font-semibold hover:bg-rose-deep hover:text-primary-foreground transition-colors duration-300">
               לשירותים שלי
             </a>
           </div>

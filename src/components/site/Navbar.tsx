@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-meirav.png";
+import { ContactActionButtons } from "@/components/site/ContactActionButtons";
 
 const links = [
   { href: "#about", label: "אודות" },
   { href: "#services", label: "השירותים" },
-  { href: "#audience", label: "למי זה מתאים" },
   { href: "#tips", label: "טיפים" },
   { href: "#testimonials", label: "המלצות" },
   { href: "#events", label: "אירועים" },
   { href: "#certifications", label: "הסמכות" },
   { href: "#faq", label: "שאלות ותשובות" },
-  { href: "#contact", label: "יצירת קשר" },
 ];
 
 export function Navbar() {
@@ -36,12 +35,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            className="hidden sm:inline-flex rounded-full bg-gradient-warm text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-soft hover:scale-105 transition-transform duration-300"
-          >
-            קבעי שיחת היכרות
-          </a>
+          <ContactActionButtons className="hidden sm:flex" />
           {/* Hamburger – visible below lg */}
           <button
             onClick={() => setOpen((v) => !v)}
@@ -69,13 +63,9 @@ export function Navbar() {
               </li>
             ))}
             <li className="mt-3 pt-3 border-t border-border/50">
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="block text-center rounded-full bg-gradient-warm text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-soft"
-              >
-                קבעי שיחת היכרות
-              </a>
+              <div className="flex justify-center" onClick={() => setOpen(false)}>
+                <ContactActionButtons />
+              </div>
             </li>
           </ul>
         </div>

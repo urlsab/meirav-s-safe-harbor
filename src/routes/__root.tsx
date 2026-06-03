@@ -105,6 +105,21 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        {/* Nagishli Accessibility */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.nl_compact = "1";
+          window.nl_dir = "/";
+          window.nl_contact = "n:אוריאל סבג|p:0556611594|u:yairsabag213+d:gmail.com";
+        `}} />
+        <script src="/nagishli.js?v=3.0" charSet="utf-8" />
+        {/* Nagishli Accessibility - Backup Load */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          if (typeof nl_compact === 'undefined') {
+            nl_compact = "1";
+            nl_dir = "/";
+            nl_contact = "n:אוריאל סבג|p:0556611594|u:yairsabag213+d:gmail.com";
+          }
+        `}} />
       </body>
     </html>
   );

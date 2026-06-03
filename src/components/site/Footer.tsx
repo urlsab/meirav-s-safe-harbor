@@ -6,13 +6,11 @@ import catappLogo from "@/assets/catapp logo no bg.png";
 const sectionLinks = [
   { href: "#about", label: "אודות" },
   { href: "#services", label: "השירותים" },
-  { href: "#audience", label: "למי זה מתאים" },
   { href: "#tips", label: "טיפים" },
   { href: "#testimonials", label: "המלצות" },
   { href: "#events", label: "אירועים" },
   { href: "#certifications", label: "הסמכות" },
   { href: "#faq", label: "שאלות ותשובות" },
-  { href: "#contact", label: "יצירת קשר" },
 ];
 
 type ModalType = "terms" | "privacy" | null;
@@ -51,7 +49,7 @@ export function Footer() {
   return (
     <>
       <footer className="bg-gradient-warm text-primary-foreground mt-10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 grid md:grid-cols-4 gap-10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 grid md:grid-cols-4 gap-8">
           <div>
             <img src={logo} alt="מירב ברוך דולה" className="h-16 w-auto bg-cream rounded-2xl p-2" />
             <p className="mt-4 text-sm leading-relaxed opacity-90">
@@ -64,7 +62,6 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="tel:0548002836" className="underline decoration-white/60 hover:text-accent transition-colors duration-200" dir="ltr">054-800-2836</a></li>
               <li><a href="mailto:meirav613@gmail.com" className="underline decoration-white/60 hover:text-accent transition-colors duration-200" dir="ltr">meirav613@gmail.com</a></li>
-              <li>זמינה בוואטסאפ ובטלפון</li>
             </ul>
           </div>
 
@@ -83,7 +80,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-5 text-xs flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 opacity-80">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-1.5 text-xs flex flex-col sm:flex-row flex-wrap items-center justify-center gap-1.5 opacity-80">
             <span>© {new Date().getFullYear()} מירב ברוך – דולה. כל הזכויות שמורות.</span>
             <span className="flex items-center gap-3">
               <button onClick={() => setModal("terms")} className="hover:underline opacity-80 hover:opacity-100 transition-opacity">תנאי שימוש</button>
