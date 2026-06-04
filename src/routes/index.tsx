@@ -16,9 +16,10 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "מירב ברוך – דולה, הכנה ללידה, עיבוד לידה והדרכת הנקה" },
-      { name: "description", content: "ליווי דולה חם ומקצועי, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה. פגישת היכרות ללא תשלום." },
-      { property: "og:title", content: "מירב ברוך – דולה והכנה ללידה" },
+      { title: "מירב ברוך דולה | ליווי דולה, הכנה ללידה והנקה" },
+      { name: "description", content: "מירב ברוך דולה: ליווי דולה חם ומקצועי, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה. פגישת היכרות ללא תשלום." },
+      { name: "keywords", content: "מירב ברוך, מירב ברוך דולה, דולה, קורס הכנה ללידה, עיבוד לידה, הדרכת הנקה" },
+      { property: "og:title", content: "מירב ברוך דולה – ליווי והכנה ללידה" },
       { property: "og:description", content: "ליווי מעצים לכל אישה בדרכה להורות." },
     ],
   }),

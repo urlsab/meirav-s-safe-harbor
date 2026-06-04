@@ -12,6 +12,31 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "מירב ברוך דולה",
+  alternateName: ["מירב ברוך", "מירב ברוך דולה"],
+  url: "/",
+  image: "/favicon.png",
+  logo: "/favicon.png",
+  description: "ליווי דולה, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה עם מירב ברוך.",
+  inLanguage: "he-IL",
+  areaServed: "IL",
+  knowsAbout: ["דולה", "הכנה ללידה", "עיבוד לידה", "הדרכת הנקה"],
+  telephone: "+972-54-800-2836",
+  email: "mailto:meirav613@gmail.com",
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "מירב ברוך דולה",
+  alternateName: ["מירב ברוך", "מירב ברוך דולה"],
+  url: "/",
+  inLanguage: "he-IL",
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,11 +102,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "מירב ברוך – דולה, מדריכת הכנה ללידה והנקה" },
-      { name: "description", content: "ליווי דולה חם ומקצועי, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה – כדי שתחווי לידה בטוחה, מעצימה וטבעית." },
+      { title: "מירב ברוך דולה | ליווי דולה, הכנה ללידה והנקה" },
+      { name: "description", content: "מירב ברוך דולה מעניקה ליווי דולה מקצועי, קורסי הכנה ללידה, עיבוד לידה והדרכת הנקה לחוויית לידה בטוחה ומעצימה." },
+      { name: "keywords", content: "מירב ברוך, מירב ברוך דולה, דולה, ליווי לידה, הכנה ללידה, עיבוד לידה, הדרכת הנקה" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "googlebot", content: "index, follow, max-image-preview:large" },
+      { name: "author", content: "מירב ברוך" },
       { property: "og:title", content: "מירב ברוך – דולה והכנה ללידה" },
-      { property: "og:description", content: "ליווי דולה, הכנה ללידה, עיבוד לידה והדרכת הנקה." },
+      { property: "og:description", content: "מירב ברוך דולה - ליווי דולה, הכנה ללידה, עיבוד לידה והדרכת הנקה." },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "he_IL" },
+      { property: "og:site_name", content: "מירב ברוך דולה" },
+      { property: "og:image", content: "/favicon.png" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "מירב ברוך דולה" },
+      { name: "twitter:description", content: "ליווי דולה והכנה ללידה עם מירב ברוך" },
+      { name: "twitter:image", content: "/favicon.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -106,6 +142,14 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="he" dir="rtl">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
       </head>
       <body>
         {children}
