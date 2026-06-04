@@ -15,7 +15,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-CRI3norJ.css";
+const appCss = "/assets/styles-CBeAGv3q.css";
 function reportLovableError(error, context = {}) {
   if (typeof window === "undefined") return;
   window.__lovableEvents?.captureException?.(
@@ -95,7 +95,11 @@ const Route$3 = createRootRouteWithContext()({
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Gveret+Levin&display=swap" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" }
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;600;700&display=swap" },
+      { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "512x512" },
+      { rel: "shortcut icon", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", href: "/favicon-32.png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" }
     ]
   }),
   shellComponent: RootShell,
@@ -153,7 +157,7 @@ const Route$1 = createFileRoute("/privacy")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("./index-BA_VJEGf.mjs");
+const $$splitComponentImporter = () => import("./index-CFMDM0uj.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{

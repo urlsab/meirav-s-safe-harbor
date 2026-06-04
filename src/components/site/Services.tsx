@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { WaveLine, FlowerSmall, DotScatter } from "./Decorations";
 
@@ -118,6 +119,29 @@ const services = [
 
 export function Services() {
   const ref = useReveal();
+  const [supportsHover, setSupportsHover] = useState(true);
+  const [activeServiceIndex, setActiveServiceIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    const updateSupportsHover = () => {
+      setSupportsHover(mediaQuery.matches);
+      if (mediaQuery.matches) {
+        setActiveServiceIndex(null);
+      }
+    };
+
+    updateSupportsHover();
+    mediaQuery.addEventListener("change", updateSupportsHover);
+
+    return () => mediaQuery.removeEventListener("change", updateSupportsHover);
+  }, []);
+
   return (
     <section id="services" className="relative pt-20 sm:pt-28 pb-12 sm:pb-16 bg-muted/40 overflow-hidden">
       {/* SVG decorations */}
@@ -137,22 +161,33 @@ export function Services() {
           {services.map((s, i) => (
             <article
               key={s.title}
-              className={`group relative h-108 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? 'border-primary' : 'border-accent'}`}
+              className={`group relative h-108 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? 'border-primary' : 'border-accent'} ${supportsHover ? '' : 'cursor-pointer'}`}
               style={{ animationDelay: `${i * 0.1}s` }}
+              tabIndex={supportsHover ? undefined : 0}
+              role={supportsHover ? undefined : "button"}
+              aria-expanded={supportsHover ? undefined : activeServiceIndex === i}
+              aria-label={supportsHover ? undefined : `${activeServiceIndex === i ? "סגירת" : "פתיחת"} ${s.title}`}
+              onClick={supportsHover ? undefined : () => setActiveServiceIndex((current) => current === i ? null : i)}
+              onKeyDown={supportsHover ? undefined : (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setActiveServiceIndex((current) => current === i ? null : i);
+                }
+              }}
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-30" aria-hidden="true">
                 <s.icon className="h-[82%] w-[82%]" />
               </div>
 
               <div
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0"
+                className={`absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0 ${!supportsHover && activeServiceIndex === i ? 'opacity-0' : ''}`}
                 aria-hidden="true"
               >
                 <s.icon className="h-[68%] w-[68%]" />
                 <h3 className={`px-6 text-xl sm:text-2xl font-bold text-center ${i % 2 === 0 ? 'text-primary' : 'text-accent'}`}>{s.title}</h3>
               </div>
 
-              <div className="absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0">
+              <div className={`absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0 ${!supportsHover && activeServiceIndex === i ? 'translate-y-0' : ''}`}>
                 <div className="absolute inset-0 bg-linear-to-b from-background/14 via-background/38 to-background/52 backdrop-blur-[1px]" aria-hidden="true" />
                 <div className="relative h-full overflow-y-auto p-6">
                   <h3 className={`text-xl sm:text-2xl font-bold text-center ${i % 2 === 0 ? 'text-primary' : 'text-accent'}`}>{s.title}</h3>

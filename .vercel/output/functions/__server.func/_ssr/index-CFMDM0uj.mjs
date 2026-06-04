@@ -480,7 +480,7 @@ function Hero() {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center lg:text-right", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4", style: { animationDelay: "0.1s" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4", style: { animationDelay: "0.1s", padding: "1rem" }, children: [
           "ליווי חם ומעצים",
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "לכל אישה בדרכה להורות"
@@ -695,6 +695,23 @@ const services = [
 ];
 function Services() {
   const ref = useReveal();
+  const [supportsHover, setSupportsHover] = reactExports.useState(true);
+  const [activeServiceIndex, setActiveServiceIndex] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const updateSupportsHover = () => {
+      setSupportsHover(mediaQuery.matches);
+      if (mediaQuery.matches) {
+        setActiveServiceIndex(null);
+      }
+    };
+    updateSupportsHover();
+    mediaQuery.addEventListener("change", updateSupportsHover);
+    return () => mediaQuery.removeEventListener("change", updateSupportsHover);
+  }, []);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "services", className: "relative pt-20 sm:pt-28 pb-12 sm:pb-16 bg-muted/40 overflow-hidden", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pointer-events-none absolute inset-0 -z-10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(FlowerSmall, { className: "absolute top-16 left-8 w-12 h-12 text-accent/20 animate-drift" }),
@@ -709,14 +726,25 @@ function Services() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid sm:grid-cols-2 gap-6", children: services.map((s, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "article",
         {
-          className: `group relative h-108 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? "border-primary" : "border-accent"}`,
+          className: `group relative h-108 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? "border-primary" : "border-accent"} ${supportsHover ? "" : "cursor-pointer"}`,
           style: { animationDelay: `${i * 0.1}s` },
+          tabIndex: supportsHover ? void 0 : 0,
+          role: supportsHover ? void 0 : "button",
+          "aria-expanded": supportsHover ? void 0 : activeServiceIndex === i,
+          "aria-label": supportsHover ? void 0 : `${activeServiceIndex === i ? "סגירת" : "פתיחת"} ${s.title}`,
+          onClick: supportsHover ? void 0 : () => setActiveServiceIndex((current) => current === i ? null : i),
+          onKeyDown: supportsHover ? void 0 : (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              setActiveServiceIndex((current) => current === i ? null : i);
+            }
+          },
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 flex items-center justify-center opacity-30", "aria-hidden": "true", children: /* @__PURE__ */ jsxRuntimeExports.jsx(s.icon, { className: "h-[82%] w-[82%]" }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "div",
               {
-                className: "absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0",
+                className: `absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0 ${!supportsHover && activeServiceIndex === i ? "opacity-0" : ""}`,
                 "aria-hidden": "true",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(s.icon, { className: "h-[68%] w-[68%]" }),
@@ -724,7 +752,7 @@ function Services() {
                 ]
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0 ${!supportsHover && activeServiceIndex === i ? "translate-y-0" : ""}`, children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-linear-to-b from-background/14 via-background/38 to-background/52 backdrop-blur-[1px]", "aria-hidden": "true" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-full overflow-y-auto p-6", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: `text-xl sm:text-2xl font-bold text-center ${i % 2 === 0 ? "text-primary" : "text-accent"}`, children: s.title }),

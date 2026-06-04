@@ -16,7 +16,7 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-right">
-          <h1 className="gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4" style={{ animationDelay: "0.1s" }}>
+          <h1 className="gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4" style={{ animationDelay: "0.1s", padding: "1rem" }}>
             ליווי חם ומעצים 
             <br />
              לכל אישה בדרכה להורות 
