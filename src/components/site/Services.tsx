@@ -3,6 +3,8 @@ import { Sparkles } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { WaveLine, FlowerSmall, DotScatter } from "./Decorations";
 
+// test deploy
+
 type ServiceIconProps = {
   className?: string;
 };
