@@ -14,16 +14,16 @@ export function About() {
       </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6 grid lg:grid-cols-5 gap-12 items-start">
         <div className="lg:col-span-3">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-primary leading-snug pb-1">
             מירב ברוך, דולה ומלווה לידה
           </h2>
           <WaveLine className="mt-3 w-32 h-4 text-primary/40" />
           <div className="mt-6 space-y-4 text-foreground/80 leading-relaxed text-lg">
             <p>
-              שמי מירב ברוך, נשואה לאבינועם אמא ל-6 וסבתא לנכדים חמודים. אני דולה ומדריכת הכנה ללידה עם 5 שנות ניסיון, במהלכן ליוויתי עשרות לידות.
+              שמי מירב ברוך, נשואה לאבינועם, אמא ל-6 וסבתא לנכדים חמודים. אני דולה ומדריכת הכנה ללידה.
             </p>
             <p>
-              במהלך שנים אלה הרחבתי את ארגז הכלים שלי ורכשתי ידע נוסף, היום אני גם מלווה נשים בשדה הלידה לעיבוד חוויות הלידה שלהן בגישת B.O.T  כל אישה והחוויה שלה והסיפור שנשאר איתה, מדריכת הנקה תומכת סביב הימים הראשונים בהנקה ומדריכה בהתנהלות נכונה להנקה נינוחה ללא קשיים, ובזמני החופשי אני גם מתנדבת כחובשת באיחוד הצלה ורואה ערך בהצלת חיים.
+              במהלך השנים בהן זכיתי ללוות עשרות לידות, הרחבתי את ארגז הכלים שלי ורכשתי ידע נוסף. היום אני גם מלווה נשים לעיבוד חוויות לידה בגישת B.O.T, מדריכת הנקה ותומכת סביב הימים הראשונים, ומדריכה בהתנהלות נכונה להנקה נינוחה. בזמני החופשי אני גם מתנדבת כחובשת באיחוד הצלה ורואה ערך בהצלת חיים.
             </p>
             <p>
               אני מאמינה שכל לידה היא חוויה זוגית מיוחדת ומשמעותית, שמה לי למטרה להעניק לכל אישה ובן זוגה את התמיכה, הביטחון והכלים הנדרשים בתהליך עוד מתקופת ההיריון ולעיתים אף קצת קודם ועד למעבר מיטבי לתוך ההורות.
@@ -32,7 +32,11 @@ export function About() {
         </div>
 
         <div className="lg:col-span-2 relative">
-          <img src={entryMeirav} alt="מירב ברוך" className="w-full object-cover" />
+          <div className="rounded-[2.2rem] border-2 border-accent/35 bg-background/75 p-3 shadow-soft">
+            <div className="aspect-square overflow-hidden rounded-4xl border border-white/55 bg-card/65">
+              <img src={entryMeirav} alt="מירב ברוך" className="h-full w-full object-cover object-center" />
+            </div>
+          </div>
           {/* Dots that appear and disappear around the image */}
           <div className="pointer-events-none absolute inset-0 overflow-visible">
             {/* right side */}

@@ -51,7 +51,7 @@ export function Footer() {
       <footer className="bg-gradient-warm text-primary-foreground mt-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 grid md:grid-cols-4 gap-8">
           <div>
-            <img src={logo} alt="מירב ברוך דולה" className="h-16 w-auto bg-cream rounded-2xl p-2" />
+            <img src={logo} alt="מירב ברוך דולה" className="h-16 w-auto" />
             <p className="mt-4 text-sm leading-relaxed opacity-90">
               ליווי דולה, הכנה ללידה, עיבוד לידה והדרכת הנקה – חם, מקצועי ומותאם אישית.
             </p>

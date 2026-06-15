@@ -33,7 +33,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Frank Ruhl Libre", "Assistant", serif;
+  --font-display: "Gveret Levin", "Assistant", cursive;
   --font-body: "Assistant", sans-serif;
 }
 
@@ -99,7 +99,7 @@
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-weight: 600;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {

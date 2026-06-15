@@ -16,14 +16,12 @@ export function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 grid lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-right">
-          <h1 className="gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4" style={{ animationDelay: "0.1s", padding: "1rem" }}>
-            ליווי חם ומעצים 
+          <h1 className="gveret-levin-regular animate-fade-up text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.28] text-primary px-1 py-1 inline-block -translate-x-2 sm:-translate-x-3 lg:-translate-x-4" style={{ animationDelay: "0.1s", padding: "1rem" }}>
+            כאן בשבילך לחוויית לידה בטוחה ומעצימה,
             <br />
-             לכל אישה בדרכה להורות 
+            שותפה מלאה למסע ההיריון, הלידה וההורות הראשונית.
+             כי לידה היא לא רגע, היא חוויה משנה חיים.
           </h1>
-          <p className="animate-fade-up mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed" style={{ animationDelay: "0.25s" }}>
-            אני כאן כדי שתחווי לידה בטוחה, מודעת ומעצימה – מהרגע הראשון של ההיריון ועד הפגישה הראשונה עם התינוק שלך.
-          </p>
           <div className="animate-fade-up mt-8 flex flex-wrap gap-4 justify-center lg:justify-start" style={{ animationDelay: "0.4s" }}>
             <a href="#contact" className="rounded-full bg-gradient-warm text-primary-foreground px-7 py-3 font-semibold shadow-warm hover:scale-105 transition-transform duration-300">
               פגישת היכרות ללא תשלום
@@ -35,13 +33,17 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade" style={{ animationDelay: "0.3s" }}>
-          <img
-            src={heroImg}
-            alt="אישה בהריון מחבקת את בטנה"
-            width={1536}
-            height={1280}
-            className="w-full h-auto animate-float"
-          />
+          <div className="mx-auto max-w-120 rounded-[2.2rem] border-2 border-primary/35 bg-background/75 p-3 shadow-warm">
+            <div className="aspect-square overflow-hidden rounded-4xl border border-white/55 bg-card/65">
+              <img
+                src={heroImg}
+                alt="אישה בהריון מחבקת את בטנה"
+                width={1536}
+                height={1280}
+                className="h-full w-full object-cover object-center animate-float"
+              />
+            </div>
+          </div>
           {/* Floating hearts */}
           <div className="pointer-events-none absolute inset-0 overflow-visible">
             <span className="absolute animate-heart-float text-2xl text-accent/70" style={{ top: "8%",  right: "7%",  animationDelay: "0s" }}>♥</span>

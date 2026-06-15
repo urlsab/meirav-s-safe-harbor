@@ -1,6 +1,4 @@
 export function BackgroundDecor() {
-  const petalColors = ["#84B6BD","#D9B4BC","#C56F82","#D9B4BC","#84B6BD","#C56F82","#D9B4BC","#84B6BD","#C56F82"];
-  const smallPetalColors = ["#84B6BD","#D9B4BC","#C56F82","#D9B4BC","#84B6BD","#C56F82","#D9B4BC","#84B6BD"];
 
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden" aria-hidden="true">
@@ -86,19 +84,6 @@ export function BackgroundDecor() {
           />
         </g>
 
-        {/* ═══ 3. Large lotus / birth flower – center ═══ */}
-        <g transform="translate(695, 445)" opacity="0.22">
-          {[0, 40, 80, 120, 160, 200, 240, 280, 320].map((deg, i) => (
-            <path
-              key={deg}
-              d="M0 0 C-14 -22 -11 -55 0 -68 C11 -55 14 -22 0 0Z"
-              fill={petalColors[i]}
-              fillOpacity="0.78"
-              transform={`rotate(${deg})`}
-            />
-          ))}
-          <circle cx="0" cy="0" r="12" fill="#C56F82" opacity="0.72" />
-        </g>
 
         {/* ═══ 4. Baby footprint – right ═══ */}
         <g transform="translate(1332, 488) scale(1.55)" opacity="0.28" fill="#D9B4BC" stroke="#C56F82" strokeWidth="1.3">
@@ -131,34 +116,6 @@ export function BackgroundDecor() {
             stroke="#C56F82" strokeWidth="1.8" fill="#C56F82" fillOpacity="0.13"
           />
         </g>
-
-        {/* ═══ 7. Small lotus – top center ═══ */}
-        <g transform="translate(362, 74)" opacity="0.26">
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
-            <path
-              key={deg}
-              d="M0 0 C-8 -14 -6 -34 0 -42 C6 -34 8 -14 0 0Z"
-              fill={smallPetalColors[i]}
-              fillOpacity="0.80"
-              transform={`rotate(${deg})`}
-            />
-          ))}
-          <circle cx="0" cy="0" r="7" fill="#C56F82" opacity="0.72" />
-        </g>
-
-        {/* ═══ 8. Flowing wave lines ═══ */}
-        <path
-          d="M-80 542 C180 507 380 577 680 540 C980 503 1180 567 1520 530"
-          stroke="#84B6BD" strokeWidth="2" strokeOpacity="0.40" strokeLinecap="round"
-        />
-        <path
-          d="M-80 558 C220 524 480 592 780 555 C1080 517 1300 580 1520 547"
-          stroke="#C56F82" strokeWidth="1.4" strokeOpacity="0.32" strokeLinecap="round"
-        />
-        <path
-          d="M-80 342 C300 310 600 374 900 338 C1200 302 1360 357 1520 324"
-          stroke="#D9B4BC" strokeWidth="1.6" strokeOpacity="0.38" strokeLinecap="round"
-        />
 
         {/* ═══ 9. Leaf sprig – bottom right ═══ */}
         <g transform="translate(1308, 792)" opacity="0.28">

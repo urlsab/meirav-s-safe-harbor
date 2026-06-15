@@ -69,7 +69,7 @@ export function Testimonials() {
       </div>
       <div ref={ref} className="reveal mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-primary leading-snug pb-1">
             מה אומרות הנשים שליוויתי
           </h2>
           <WaveLine className="mt-3 mx-auto w-36 h-4 text-primary/40" />
@@ -88,12 +88,12 @@ export function Testimonials() {
                   dir="rtl"
                 >
                   <div
-                    className={`rounded-3xl border-2 p-7 sm:p-10 shadow-soft max-w-2xl mx-auto bg-background/50 ${
+                    className={`rounded-3xl border-2 p-7 sm:p-10 shadow-warm max-w-2xl mx-auto bg-background/70 ${
                       i % 2 === 0 ? "border-primary" : "border-accent"
                     }`}
                   >
-                    <blockquote className="text-foreground/85 leading-relaxed text-lg">&ldquo;{t.text}&rdquo;</blockquote>
-                    <figcaption className="mt-5 font-semibold text-primary">— {t.author}</figcaption>
+                    <blockquote className="text-foreground leading-relaxed text-xl font-semibold">&ldquo;{t.text}&rdquo;</blockquote>
+                    <figcaption className="mt-5 text-lg font-bold text-primary">— {t.author}</figcaption>
                   </div>
                 </figure>
               ))}

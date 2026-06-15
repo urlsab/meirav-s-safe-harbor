@@ -1,5 +1,6 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { WaveLine } from "./Decorations";
+import { Sparkles } from "lucide-react";
 import womanThree from "@/assets/woman 3.png";
 import holdss from "@/assets/holdss.png";
 import babyIn from "@/assets/baby in.png";
@@ -127,7 +128,13 @@ export function Tips() {
                       : undefined
                   }
                 >
-                  <h3 className="text-xl font-bold leading-snug">{t.front}</h3>
+                  <div className="rounded-full border border-white/70 bg-white/20 px-4 py-1.5 shadow-soft backdrop-blur-sm">
+                    <h3 className="text-xl font-bold leading-snug">{t.front}</h3>
+                  </div>
+                  {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/65 bg-white/70 px-3 py-1 text-xs font-semibold text-foreground/80 shadow-soft">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>לחצי/לחץ להפיכת הקלף</span>
+                  </div> */}
                 </div>
                 <div
                   className={`flip-face flip-back border flex flex-col p-5 text-center overflow-y-auto ${tipBackgrounds[t.front] ? "border-white/30 bg-cover bg-center bg-no-repeat" : `${i % 2 === 0 ? "card-teal" : "card-rose"} border-border`}`}

@@ -1,13 +1,13 @@
 import { useReveal } from "@/hooks/use-reveal";
-import tomechetBirth from "@/assets/tomechet birth.png";
-import hanakAdvisor from "@/assets/hanak advaisor.png";
-import hachanBirth from "@/assets/hachan birth.png";
-import bot from "@/assets/bot.png";
+import tomechetBirth from "@/assets/שתף 1 Z0 Z.pdf-1.png";
+import hanakAdvisor from "@/assets/שתף CERTIFICATE OF COMPLETION.pdf-1.png";
+import beforebirth from "@/assets/שתף IIL1.pdf-1.png";
+import bot from "@/assets/עותק של תעודת סיום בי או. טי .png";
 
 const certs = [
-  { src: tomechetBirth, alt: "תומכת לידה", title: "ליווי לידה" },
+  { src: tomechetBirth, alt: "תומכת לידה", title: "הכנה ללידה" },
   { src: hanakAdvisor, alt: "יועצת הנקה", title: "ייעוץ הנקה" },
-  { src: hachanBirth, alt: "הכנה ללידה", title: "הכנה ללידה" },
+  { src: beforebirth, alt: "הכנה ללידה", title: "ליווי לידה" },
   { src: bot, alt: "עיבוד לידה", title: "עיבוד לידה" },
 ];
 
@@ -17,7 +17,7 @@ export function Certifications() {
     <section id="certifications" className="py-20 sm:py-28 bg-background/60">
       <div ref={ref} className="reveal mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold bg-linear-to-l from-primary via-accent to-primary bg-clip-text text-transparent leading-snug pb-1">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-primary leading-snug pb-1">
             ההכשרות שלי
           </h2>
         </div>
