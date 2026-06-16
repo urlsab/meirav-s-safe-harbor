@@ -8,7 +8,7 @@ const sectionLinks = [
   { href: "#services", label: "השירותים" },
   { href: "#tips", label: "טיפים" },
   { href: "#testimonials", label: "המלצות" },
-  { href: "#events", label: "אירועים" },
+  { href: "#gallery", label: "גלריה" },
   { href: "#certifications", label: "הסמכות" },
   { href: "#faq", label: "שאלות ותשובות" },
 ];

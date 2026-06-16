@@ -4,6 +4,8 @@ import eventsImg2 from "@/assets/got medal.jpeg";
 import eventsImg3 from "@/assets/WhatsApp Image 2026-05-11 at 18.59.00.jpeg";
 import { WaveLine } from "./Decorations";
 
+// test deploy 22
+
 export function Events() {
   const ref = useReveal();
   return (
@@ -11,7 +13,7 @@ export function Events() {
       <div ref={ref} className="reveal mx-auto max-w-3xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-primary leading-snug pb-1">
-            חוויות מהשטח
+            גלריה
           </h2>
           <WaveLine className="mt-3 mx-auto w-32 h-4 text-primary/40" />
         </div>
