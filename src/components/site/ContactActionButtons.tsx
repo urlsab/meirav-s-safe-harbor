@@ -56,7 +56,7 @@ type ContactActionButtonsProps = {
 export function ContactActionButtons({ className = "" }: ContactActionButtonsProps) {
   return (
     <div className={`flex flex-col items-center gap-2 sm:gap-3 ${className}`.trim()}>
-      <p className="text-m font-semibold text-primary/90">מזמינה אותך לפגישת היכרות ללא תשלום והתחייבות</p>
+      <p className="text-lg font-bold text-primary/90">מזמינה אותך לפגישת היכרות ללא תשלום והתחייבות</p>
       <div className="flex items-center gap-2 sm:gap-3">
       {contactActions.map((action) => {
         const Icon = action.icon;

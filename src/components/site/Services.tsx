@@ -230,7 +230,7 @@ export function Services() {
                 aria-hidden="true"
               >
                 {s.imageSrc ? (
-                  <img src={s.imageSrc} alt="" className="h-[58%] w-[58%] object-contain" />
+                  <img src={s.imageSrc} alt="" className="h-[58%] w-[58%] object-contain"/>
                 ) : s.icon ? (
                   <s.icon className="h-[58%] w-[58%]" />
                 ) : null}
