@@ -1,12 +1,23 @@
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
+import ibudLeida from "@/assets/ibud leida.png";
+import beforbirth from "@/assets/befor birthhh.png";
+import holdbed from "@/assets/hold bed.png";
+import hanakaguide from "@/assets/hanaka guide.png";
 import { WaveLine, FlowerSmall, DotScatter } from "./Decorations";
 
 // test deploy
 
 type ServiceIconProps = {
   className?: string;
+};
+
+type ServiceItem = {
+  icon?: React.ComponentType<ServiceIconProps>;
+  imageSrc?: string;
+  title: string;
+  text: string;
 };
 
 // ליווי דולה ללידה — לב שמכיל תינוק בעמדת עובר, מסומל ע"י עיגול + תנועת גוף מתעגלת
@@ -127,22 +138,22 @@ function ServiceNursingIcon({ className }: ServiceIconProps) {
 
 const services = [
   {
-    icon: ServiceBirthSupportIcon,
+    imageSrc: holdbed,
     title: "ליווי דולה ללידה",
     text: "ליווי מקצועי ורגיש מההיריון ועד ללידה. במפגשי ההכנה ללידה נכיר זה את זה, נבין את הצרכים שלכם ונצעד יחד. אני כאן כדי לספק מידע נרחב ככל שברשותי, לתת לך בטחון, להסביר מה קורה בגופך, ולתת כלים מנטליים ומעשיים להתמודדות עם ההיריון, הצירים והלידה. לתמוך בבן הזוג ולתת לו כלים להיות שותף מלא ופעיל, ולעזור בתקשורת מכבדת מול הצוות הרפואי.\n\nבמהלך הלידה איישם את הטכניקות בהן אני מיומנת ואשתמש בכל ארגז הכלים העומד לרשותי כדי לעודד את התקדמותך בלידה ולסייע לך בכל דרך, על מנת להפוך את חוויית הלידה שלך לחיובית, טובה ומעצימה, והכל מתוך רגישות ושימת לב לצרכים המשתנים. וגם אחרי הלידה אמשיך במעטפת חמה ודואגת, לסכם יחד את החוויה ולגלות את האמא שנולדה מתוכך.",
   },
   {
-    icon: ServiceCourseIcon,
+    imageSrc: beforbirth,
     title: "קורסי הכנה ללידה",
     text: "מפגשי הכנה ללידה מקיפים המכינים אותך ואת בן הזוג שלך ללידה ולהורות ומעניקים כלים מעשיים לליווי מיטבי של תהליך הלידה. כלים להתמודדות עם הצירים ועם המצבים המשתנים תוך כדי הלידה, ומקנים בטחון בתהליך ובגוף שלך ומאפשרים לך לחוות חוויה רגועה ומיטיבה. נלמד יחד איך להגביר את השפעת ההורמונים הטבעיים ע\"מ לקדם את הלידה, לשכך את הכאב באופן טבעי.\n\nמבנה הקורסים מותאם הן לנשים בלידה ראשונה והן לנשים בלידות חוזרות.\n\nקורס הכנה ללידה ראשונה: כולל 4 מפגשים בני כשעתיים.\nקורס הכנה ללידה חוזרת: 1-2 מפגשים כשעתיים בהם נתמקד בצרכים שעולים בעקבות הלידות הקודמות.",
   },
   {
-    icon: ServiceProcessingIcon,
+    imageSrc: ibudLeida,
     title: "עיבוד לידה",
     text: "חלק מהקושי שעולה בעקבות לידה הוא הקושי לתת לגיטמציה ולפנות מקום לחווית הלידה ולכל התחושות המלוות אותה.\nכשמשהו מהלידה לא עוזב אותך, גדול או קטן או תחושה פנימית שכלל לא נראית כלפי חוץ, אפשר וכדאי לתת להם מקום, לתת תוקף ומילים לתחושות שלך ואת זה אנחנו עושות בעיבוד לידה.\n\nאז מה זה עיבוד לידה?\nמפגשים בהם שתינו ביחד נפגוש את סיפור הלידה שלך או חלק ממנו מתוך הקשבה וניתן הזדמנות לכל מה שנשאר בך מהלידה ועדין לא קיבל ביטוי להישמע ולהירפא.\n\nהליווי מבוסס על גישת B.O.T (Birth Oriented Thinking) ומטרתו לעזור לך:\nלעבד ולהבין את מה שקרה בלידה\nלזהות ולהתמודד עם הרגשות הקשים\nלשחרר מתחים ופחדים לקראת לידות עתידיות\nלסגור מעגל ולהתקדם קדימה בשלום עם החוויה\n\nזהו תהליך מותאם אישית שמאפשר לך להשלים עם הלידה שהייתה ולהרגיש מוכנה יותר להמשך הדרך.",
   },
   {
-    icon: ServiceNursingIcon,
+    imageSrc: hanakaguide,
     title: "הדרכת הנקה",
     text: "ליווי והדרכה בתחום ההנקה - מהצעדים הראשונים ועד לפתרון בעיות ואתגרים. הדרכה מותאמת אישית לצרכים שלך ושל התינוק, להנקה רגועה.\nבהתאם לצורך שלך ניתן לקבל הדרכה מוקדמת עוד בשלב ההיריון בכדי למנוע את הקשיים הראשונים שעולים מייד אחרי הלידה כשאת כאובה ולומדת את צעדייך הראשונים כאמא, הכנה כזו מקנה בטחון בהתנהלות נכונה.",
   },
@@ -189,7 +200,7 @@ export function Services() {
           <WaveLine className="mt-3 mx-auto w-40 h-4 text-accent/40" />
         </div>
         <div className="mt-14 grid sm:grid-cols-2 gap-6">
-          {services.map((s, i) => (
+          {(services as ServiceItem[]).map((s, i) => (
             <article
               key={s.title}
               className={`group relative h-72 rounded-3xl overflow-hidden shadow-soft border-2 hover:shadow-warm hover:-translate-y-1 transition-all duration-500 bg-background/45 ${i % 2 === 0 ? 'border-primary' : 'border-accent'} cursor-pointer`}
@@ -207,23 +218,27 @@ export function Services() {
               }}
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-30" aria-hidden="true">
-                <s.icon className="h-[82%] w-[82%]" />
+                {s.imageSrc ? (
+                  <img src={s.imageSrc} alt="" className="h-[82%] w-[82%] object-contain" />
+                ) : s.icon ? (
+                  <s.icon className="h-[82%] w-[82%]" />
+                ) : null}
               </div>
 
               <div
                 className={`absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0 ${!supportsHover && activeServiceIndex === i ? 'opacity-0' : ''}`}
                 aria-hidden="true"
               >
-                <s.icon className="h-[58%] w-[58%]" />
+                {s.imageSrc ? (
+                  <img src={s.imageSrc} alt="" className="h-[58%] w-[58%] object-contain" />
+                ) : s.icon ? (
+                  <s.icon className="h-[58%] w-[58%]" />
+                ) : null}
                 <h3 className={`text-xl sm:text-2xl font-bold text-center ${i % 2 === 0 ? 'text-primary' : 'text-accent'}`}>
                   <span className="inline-block rounded-full border border-gray-400/40 bg-gray-500/15 px-6 py-2 shadow-sm backdrop-blur-sm">
                     {s.title}
                   </span>
                 </h3>
-                {/* <div className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-1 text-xs font-semibold text-foreground/80 shadow-soft">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  <span>לחצי לפתיחה</span>
-                </div> */}
               </div>
 
               <div className={`absolute inset-0 z-20 translate-y-full transition-transform duration-700 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0 ${!supportsHover && activeServiceIndex === i ? 'translate-y-0' : ''}`}>

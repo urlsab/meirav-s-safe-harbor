@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hand 2 birth.png";
+import heroImg from "@/assets/new handsss.png";
 import { LotusDecor, DotScatter, FlowerSmall } from "./Decorations";
 
 export function Hero() {

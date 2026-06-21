@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
-import entryMeirav from "@/assets/sopa meirav.png";
+import entryMeirav from "@/assets/new meirav face.jpg";
 import { LeafSprig, MotherBabyDecor, WaveLine } from "./Decorations";
 
 export function About() {
