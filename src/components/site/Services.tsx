@@ -240,7 +240,8 @@ export function Services() {
                     <img
                       src={s.imageSrc}
                       alt=""
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain rounded-[10%] overflow-hidden"
+                      style={{borderRadius: "10%", overflow: "hidden", objectFit: "cover", objectPosition: "top"}}
                     />
                   </div>
                 ) : s.icon ? (

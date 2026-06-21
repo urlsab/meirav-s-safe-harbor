@@ -12,6 +12,9 @@ import { Certifications } from "@/components/site/Certifications";
 import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { HeroCTA } from "@/components/site/HeroCTA";
+
+// test 33
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,8 +35,9 @@ function Index() {
       <BackgroundDecor />
       <Navbar />
       <main>
-        <Hero />
         <About />
+        <HeroCTA />
+        <Hero />
         <Services />
         <Audience />
         <Tips />

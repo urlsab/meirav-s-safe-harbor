@@ -29,9 +29,10 @@ export function About() {
               אני מאמינה שכל לידה היא חוויה זוגית מיוחדת ומשמעותית, שמה לי למטרה להעניק לכל אישה ובן זוגה את התמיכה, הביטחון והכלים הנדרשים בתהליך עוד מתקופת ההיריון ולעיתים אף קצת קודם ועד למעבר מיטבי לתוך ההורות.
             </p>
           </div>
+          
         </div>
 
-        <div className="lg:col-span-2 relative">
+        <div className="lg:col-span-2 relative order-first lg:order-last">
           <div className="rounded-[2.2rem] border-2 border-accent/35 bg-background/75 p-3 shadow-soft">
             <div className="aspect-square overflow-hidden rounded-4xl border border-white/55 bg-card/65">
               <img src={entryMeirav} alt="מירב ברוך" className="h-full w-full object-cover object-center" />
@@ -57,9 +58,17 @@ export function About() {
             {/* bottom */}
             <span className="absolute rounded-full w-2   h-2"   style={{ top: "104%", left: "28%", background: "oklch(0.59 0.108 354 / 0.70)", animation: "line-breathe 5s ease-in-out infinite 0.6s" }} />
             <span className="absolute rounded-full w-3   h-3"   style={{ top: "106%", left: "58%", background: "oklch(0.73 0.053 198 / 0.75)", animation: "line-breathe 5s ease-in-out infinite 1.8s" }} />
+
+
+
           </div>
+
+
         </div>
       </div>
     </section>
+
+
+
   );
 }

@@ -22,14 +22,7 @@ export function Hero() {
             שותפה מלאה למסע ההיריון, הלידה וההורות הראשונית.
              כי לידה היא לא רגע, היא חוויה משנה חיים.
           </h1>
-          <div className="animate-fade-up mt-8 flex flex-wrap gap-4 justify-center lg:justify-start" style={{ animationDelay: "0.4s" }}>
-            <a href="#contact" className="rounded-full bg-gradient-warm text-primary-foreground px-7 py-3 font-semibold shadow-warm hover:scale-105 transition-transform duration-300">
-              פגישת היכרות ללא תשלום
-            </a>
-            <a href="#services" className="rounded-full border-2 border-rose-deep text-rose-deep px-7 py-3 font-semibold hover:bg-rose-deep hover:text-primary-foreground transition-colors duration-300">
-              לשירותים שלי
-            </a>
-          </div>
+          
         </div>
 
         <div className="relative animate-fade" style={{ animationDelay: "0.3s" }}>
