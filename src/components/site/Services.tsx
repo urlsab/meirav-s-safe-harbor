@@ -219,7 +219,13 @@ export function Services() {
             >
               <div className="absolute inset-0 flex items-center justify-center opacity-30" aria-hidden="true">
                 {s.imageSrc ? (
-                  <img src={s.imageSrc} alt="" className="h-[82%] w-[82%] object-contain" />
+                  <div className="h-[82%] w-[82%] rounded-[10%] overflow-hidden flex items-center justify-center">
+                    <img
+                      src={s.imageSrc}
+                      alt=""
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 ) : s.icon ? (
                   <s.icon className="h-[82%] w-[82%]" />
                 ) : null}
@@ -230,7 +236,13 @@ export function Services() {
                 aria-hidden="true"
               >
                 {s.imageSrc ? (
-                  <img src={s.imageSrc} alt="" className="h-[58%] w-[58%] object-contain"/>
+                  <div className="h-[58%] w-[58%] rounded-[10%] overflow-hidden flex items-center justify-center">
+                    <img
+                      src={s.imageSrc}
+                      alt=""
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 ) : s.icon ? (
                   <s.icon className="h-[58%] w-[58%]" />
                 ) : null}
