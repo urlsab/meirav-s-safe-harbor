@@ -1,6 +1,6 @@
 import heroImg from "@/assets/new handsss.png";
 import { LotusDecor, DotScatter, FlowerSmall } from "./Decorations";
-
+// test delete project at lovable if it crash code and deploy from here
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
